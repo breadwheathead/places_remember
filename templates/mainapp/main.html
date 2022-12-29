@@ -12,7 +12,7 @@
                 {% if user.is_authenticated %}
                 <a href="#" class="btn btn-outline-dark btn-lg px-4 gap-3">Продолжить</a>
                 {% else %}
-                <a href="#" class="btn btn-outline-dark btn-lg px-4 gap-3">Войти с помощью VK</a>
+                <a href="{% url 'social:begin' 'vk-oauth2' %}" class="btn btn-outline-dark btn-lg px-4 gap-3">Войти с помощью VK</a>
                 {% endif %}
             </div>
         </div>

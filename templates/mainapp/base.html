@@ -47,7 +47,7 @@
                         </ul>
                     </div>
                     {% else %}
-                    <a class="btn btn-dark me-2" href="#">
+                    <a class="btn btn-dark me-2" href="{% url 'social:begin' 'vk-oauth2' %}">
                         Войти <img src="{% static 'images/vk.png' %}" alt="vk" width="28" height="28">
                     </a>
                     {% endif %}
