@@ -27,9 +27,30 @@
                     <span class="fs-5">Places Remember</span>
                 </a>
                 <div class="text-end">
+                    {% if user.is_authenticated %}
+                    <div class="flex-shrink-0 dropdown">
+                        <a href="#" class="d-block link-secondary text-white text-decoration-none dropdown-toggle"
+                           data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            <span class="fs-5 me-2">{{ user.username }}</span>
+                            <img src="{% if user.avatar %}{{ user.avatar.url }}
+                            {% else %}{% static 'images/default_avatar.png' %}
+                            {% endif %}" alt="avatar" width="32" height="32" class="rounded-circle">
+                        </a>
+                        <ul class="dropdown-menu text-small shadow">
+                            <li><a class="dropdown-item" href="#">Воспоминания</a></li>
+                            <li><a class="dropdown-item" href="#">Добавить воспоминание</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Выйти</a></li>
+                        </ul>
+                    </div>
+                    {% else %}
                     <a class="btn btn-dark me-2" href="#">
                         Войти <img src="{% static 'images/vk.png' %}" alt="vk" width="28" height="28">
                     </a>
+                    {% endif %}
                 </div>
             </div>
         </div>
