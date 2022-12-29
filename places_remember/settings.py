@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'social_django',
 
     'mainapp',
+    'remembersapp',
 ]
 
 MIDDLEWARE = [

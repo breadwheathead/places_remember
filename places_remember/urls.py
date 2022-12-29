@@ -26,6 +26,7 @@ urlpatterns = [
     path('', MainPageView.as_view(), name='main'),
     path('', include('social_django.urls', namespace='social')),
     path('logout/', LogoutView.as_view(), name='logout'),
+    path('remembers/', include('remembersapp.urls', namespace='remembers')),
 ]
 
 if settings.DEBUG:

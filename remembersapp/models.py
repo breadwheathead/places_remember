@@ -1,3 +1,18 @@
 from django.db import models
 
-# Create your models here.
+from mainapp.models import User
+
+
+class Remember(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    title = models.CharField(max_length=256)
+    description = models.TextField(max_length=512, blank=True)
+    latitude = models.FloatField()
+    longitude = models.FloatField()
+    create_timestamp = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-create_timestamp']
+
+    def __str__(self):
+        return self.title

@@ -3,5 +3,7 @@
 /places_remember/.env
 /mainapp/__pycache__/
 /mainapp/migrations/__pycache__/
+/remembersapp/__pycache__/
+/remembersapp/migrations/__pycache__/
 /media/
 db.sqlite3
