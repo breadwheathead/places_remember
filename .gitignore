@@ -2,5 +2,6 @@
 /places_remember/__pycache__/
 /places_remember/.env
 /mainapp/__pycache__/
+/mainapp/migrations/__pycache__/
 /media/
 db.sqlite3
