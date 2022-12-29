@@ -34,7 +34,7 @@ def save_avatar(backend, user, response, *args, **kwargs):
 def get_avatar(path, username):
     response = requests.get(path)
     avatar_name = f'{username}.jpg'
-    with open(f'{settings.MEDIA_ROOT}/avatars/{avatar_name}', 'wb') as file:
+    with open(f'{settings.MEDIA_ROOT}/images/avatars/{avatar_name}', 'wb') as file:
         file.write(response.content)
-    return f'avatars/{avatar_name}'
+    return f'/images/avatars/{avatar_name}'
 
