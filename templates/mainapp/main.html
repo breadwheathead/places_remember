@@ -1,0 +1,22 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block content %}
+<div class="content">
+    <div class="main-bg container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-10 col-sm-8 col-lg-6"></div>
+            <div class="col-lg-6">
+                <h1 class="display-5 fw-bold lh-1 mb-3">Places Remember</h1>
+                <p class="lead">Здесь вы можете хранить свои впечатления о посещаемых местах.
+                    Для того чтобы продолжить, авторизуйтесь любым предложенным способом</p>
+                {% if user.is_authenticated %}
+                <a href="{% url 'remembers:remembers' %}" class="btn btn-outline-dark btn-lg px-4 gap-3">Продолжить</a>
+                {% else %}
+                <a href="{% url 'social:begin' 'vk-oauth2' %}" class="btn btn-outline-dark btn-lg px-4 gap-3">Войти с
+                    помощью VK</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

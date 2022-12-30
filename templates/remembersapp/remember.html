@@ -1,0 +1,30 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-5">
+            <div class="card">
+                <img src="https://static-maps.yandex.ru/1.x/?ll={{ object.longitude }},{{ object.latitude }}&
+                z=16&l=sat,skl&pt={{ object.longitude }},{{ object.latitude }},pm2dol"
+                     alt="map">
+            </div>
+            <div class="mt-3 d-grid gap-2 d-sm-flex justify-content-sm-start">
+                <a href="{% url 'remembers:remembers' %}" type="button" class="btn btn-secondary btn-lg px-4 gap-3">
+                    Назад
+                </a>
+                <form action="{% url 'remembers:delete' object.pk %}" method="post">
+                    {% csrf_token %}
+                    <input class="btn btn-dark btn-lg px-4 gap-3" type="submit" value="Удалить воспоминание">
+                </form>
+            </div>
+        </div>
+        <div class="col">
+            <h1 class="display-5 fw-bold">{{ object.title }}</h1>
+            <p class="lead">{{ object.description }}</p>
+            <p>Координаты места: {{ object.latitude|floatformat:4 }} / {{ object.longitude|floatformat:4 }}</p>
+            <small class="opacity-50 text-nowrap">{{ remember.create_timestamp|date:"d.m.Y H:i" }}</small>
+        </div>
+    </div>
+</div>
+{% endblock %}
