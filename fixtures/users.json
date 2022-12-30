@@ -1,0 +1,21 @@
+[
+  {
+    "model": "mainapp.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$390000$7nfb4yXIhvPq9xDWS6sWX4$jx/Hlz95qgY3u0LTU7/b5+6ESDoXflHh8tdPxzI3UTU=",
+      "last_login": "2022-12-30T12:31:56.324Z",
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2022-12-30T12:13:53.140Z",
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  }
+]
