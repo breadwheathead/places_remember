@@ -1,6 +1,7 @@
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, DetailView, DeleteView
 
+from django.conf import settings
 from remembersapp.forms import RememberAddForm
 from remembersapp.models import Remember
 
@@ -25,6 +26,11 @@ class RememberAddView(CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['apikey'] = settings.YA_MAP_API_KEY
+        return context
 
 
 class RememberView(DetailView):
