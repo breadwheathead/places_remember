@@ -1,7 +1,7 @@
+import requests
 from collections import OrderedDict
 from urllib.parse import urlencode, urlunparse
 
-import requests
 from django.conf import settings
 
 
@@ -37,4 +37,3 @@ def get_avatar(path, username):
     with open(f'{settings.MEDIA_ROOT}/images/avatars/{avatar_name}', 'wb') as file:
         file.write(response.content)
     return f'/images/avatars/{avatar_name}'
-

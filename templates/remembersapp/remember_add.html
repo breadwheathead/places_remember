@@ -4,7 +4,6 @@
 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey={{ apikey }}" type="text/javascript"></script>
 <script src="{% static 'js/geocode.js' %}" type="text/javascript"></script>
 {% endblock %}
-
 {% block content %}
 <div class="container">
     <form action="{% url 'remembers:add' %}" method="post">

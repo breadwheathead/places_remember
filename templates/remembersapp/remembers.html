@@ -5,7 +5,8 @@
     {% if page_obj %}
     <div class="list-group w-auto mb-3">
         {% for remember in page_obj %}
-        <a href="{% url 'remembers:remember' remember.pk %}" class="list-group-item list-group-item-action d-flex gap-3 py-3"
+        <a href="{% url 'remembers:remember' remember.pk %}"
+           class="list-group-item list-group-item-action d-flex gap-3 py-3"
            aria-current="true">
             <img src="{% static 'images/point.png' %}" alt="point" width="32" height="32"
                  class="flex-shrink-0">

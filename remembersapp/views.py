@@ -1,7 +1,7 @@
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, DetailView, DeleteView
-
 from django.conf import settings
+
 from remembersapp.forms import RememberAddForm
 from remembersapp.models import Remember
 
