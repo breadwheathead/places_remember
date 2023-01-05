@@ -4,6 +4,7 @@ from remembersapp.models import Remember
 
 
 class RememberAddForm(forms.ModelForm):
+    """ Form to add new remember """
     class Meta:
         model = Remember
         fields = ('title', 'description', 'latitude', 'longitude')

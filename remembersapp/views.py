@@ -7,6 +7,7 @@ from remembersapp.models import Remember
 
 
 class RemembersListView(ListView):
+    """ View list of remembers """
     model = Remember
     extra_context = {'title': 'Воспоминания'}
     paginate_by = 10
@@ -17,6 +18,7 @@ class RemembersListView(ListView):
 
 
 class RememberAddView(CreateView):
+    """ View to add new remember """
     model = Remember
     extra_context = {'title': 'Добавить Воспоминание'}
     form_class = RememberAddForm
@@ -34,12 +36,14 @@ class RememberAddView(CreateView):
 
 
 class RememberView(DetailView):
+    """ View remember page """
     model = Remember
     extra_context = {'title': 'Воспоминание'}
     template_name = 'remembersapp/remember.html'
 
 
 class RememberDelView(DeleteView):
+    """ View delete remember """
     model = Remember
     template_name = 'remembersapp/remember.html'
     success_url = reverse_lazy('remembers:remembers')

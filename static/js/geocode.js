@@ -3,7 +3,7 @@ var myMap;
 
 function init () {
     myMap = new ymaps.Map("map", {
-        center: [56.010569, 92.852572], // Красноярск
+        center: [56.010569, 92.852572], // Krasnoyarsk
         zoom: 11
     }, {
         balloonMaxWidth: 200,

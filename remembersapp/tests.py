@@ -6,7 +6,6 @@ from remembersapp.forms import RememberAddForm
 
 
 class RememberModelTest(TestCase):
-
     @classmethod
     def setUpTestData(cls):
         user = User.objects.create_user(username='firebrand')
@@ -55,7 +54,6 @@ class RememberModelTest(TestCase):
 
 
 class RememberAddFormTest(TestCase):
-
     def test_add_form_title_field_label(self):
         form = RememberAddForm()
         self.assertTrue(

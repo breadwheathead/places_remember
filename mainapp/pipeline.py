@@ -6,6 +6,7 @@ from django.conf import settings
 
 
 def save_avatar(backend, user, response, *args, **kwargs):
+    """ Save avatar in media/avatar folder """
     if backend.name != 'vk-oauth2':
         return
 
@@ -32,6 +33,7 @@ def save_avatar(backend, user, response, *args, **kwargs):
 
 
 def get_avatar(path, username):
+    """ Get avatar by API vk and return path to file """
     response = requests.get(path)
     avatar_name = f'{username}.jpg'
     with open(f'{settings.MEDIA_ROOT}/images/avatars/{avatar_name}', 'wb') as file:
