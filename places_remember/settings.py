@@ -136,4 +136,4 @@ SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.user.user_details',
 )
 
-YA_MAP_API_KEY = env('YA_MAP_API_KEY')
+YA_MAP_API_KEY = 'c48c4667-0958-43fa-bbf7-ddb1099a96c4'
