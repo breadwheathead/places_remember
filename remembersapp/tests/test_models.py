@@ -2,7 +2,6 @@ from django.test import TestCase
 
 from mainapp.models import User
 from remembersapp.models import Remember
-from remembersapp.forms import RememberAddForm
 
 
 class RememberModelTest(TestCase):
@@ -13,8 +12,8 @@ class RememberModelTest(TestCase):
             user=user,
             title='Кафе Мелодия',
             description='Уютное атмосферное заведение',
-            latitude='55.9662',
-            longitude='92.8309'
+            latitude=55.9662,
+            longitude=92.8309
         )
 
     def test_title_label(self):
@@ -51,25 +50,3 @@ class RememberModelTest(TestCase):
         remember = Remember.objects.get(id=1)
         expected_object_name = remember.title
         self.assertEquals(expected_object_name, str(remember))
-
-
-class RememberAddFormTest(TestCase):
-    def test_add_form_title_field_label(self):
-        form = RememberAddForm()
-        self.assertTrue(
-            form.fields['title'].label is None or form.fields['title'].label == 'title')
-
-    def test_add_form_description_field_label(self):
-        form = RememberAddForm()
-        self.assertTrue(
-            form.fields['description'].label is None or form.fields['description'].label == 'description')
-
-    def test_add_form_latitude_field_label(self):
-        form = RememberAddForm()
-        self.assertTrue(
-            form.fields['latitude'].label is None or form.fields['latitude'].label == 'latitude')
-
-    def test_add_form_longitude_field_label(self):
-        form = RememberAddForm()
-        self.assertTrue(
-            form.fields['longitude'].label is None or form.fields['longitude'].label == 'longitude')

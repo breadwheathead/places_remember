@@ -1,4 +1,3 @@
-from django.contrib.auth.decorators import login_required
 from django.urls import path
 
 from remembersapp.views import RemembersListView, RememberAddView, RememberView, RememberDelView
@@ -6,8 +5,8 @@ from remembersapp.views import RemembersListView, RememberAddView, RememberView,
 app_name = 'remembersapp'
 
 urlpatterns = [
-    path('', login_required(RemembersListView.as_view()), name='remembers'),
-    path('add/', login_required(RememberAddView.as_view()), name='add'),
-    path('remember/<int:pk>/', login_required(RememberView.as_view()), name='remember'),
-    path('delete/<int:pk>/', login_required(RememberDelView.as_view()), name='delete'),
+    path('', RemembersListView.as_view(), name='remembers'),
+    path('add/', RememberAddView.as_view(), name='add'),
+    path('remember/<int:pk>/', RememberView.as_view(), name='remember'),
+    path('delete/<int:pk>/', RememberDelView.as_view(), name='delete'),
 ]

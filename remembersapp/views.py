@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, DetailView, DeleteView
 from django.conf import settings
@@ -6,7 +7,7 @@ from remembersapp.forms import RememberAddForm
 from remembersapp.models import Remember
 
 
-class RemembersListView(ListView):
+class RemembersListView(LoginRequiredMixin, ListView):
     """ View list of remembers """
     model = Remember
     extra_context = {'title': 'Воспоминания'}
@@ -17,7 +18,7 @@ class RemembersListView(ListView):
         return Remember.objects.filter(user=self.request.user.id)
 
 
-class RememberAddView(CreateView):
+class RememberAddView(LoginRequiredMixin, CreateView):
     """ View to add new remember """
     model = Remember
     extra_context = {'title': 'Добавить Воспоминание'}
@@ -35,14 +36,14 @@ class RememberAddView(CreateView):
         return context
 
 
-class RememberView(DetailView):
+class RememberView(LoginRequiredMixin, DetailView):
     """ View remember page """
     model = Remember
     extra_context = {'title': 'Воспоминание'}
     template_name = 'remembersapp/remember.html'
 
 
-class RememberDelView(DeleteView):
+class RememberDelView(LoginRequiredMixin, DeleteView):
     """ View delete remember """
     model = Remember
     template_name = 'remembersapp/remember.html'

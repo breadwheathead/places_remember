@@ -4,5 +4,6 @@
 /mainapp/__pycache__/
 /mainapp/migrations/__pycache__/
 /remembersapp/__pycache__/
-/remembersapp/migrations/__pycache__/
+/remembersapp/migrations/__pycache__
+/remembersapp/tests/__pycache__/
 /media/
